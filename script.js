@@ -67,7 +67,7 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
 const hero = document.querySelector('.hero');
 const heroArt = document.getElementById('hero-art');
 const parallaxWindows = [...document.querySelectorAll('.window')];
-const speeds = [0.1, -0.075, 0.075, -0.055, 0.085, -0.06];
+const speeds = [0.1, -0.075, 0.075, -0.055, 0.085, -0.06, 0.05];
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 let scrollFrame = 0;
 

@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f0e9">
   <title>Yuhui — Data & AI</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261110-reading">
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -16,7 +16,7 @@
       document.documentElement.dataset.theme = theme;
     } catch (_) {}
   </script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261110-reading" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-zh="跳到主要内容" data-en="Skip to content">跳到主要内容</a>
@@ -42,7 +42,7 @@
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span>YUHUI · STUDENT AT DUFE</p>
+        <p class="eyebrow"><span class="status-dot"></span>YUHUI · FINANCIAL TECHNOLOGY · DUFE</p>
         <h1 id="hero-title">
           <span data-zh="让数据，" data-en="Find the shape">让数据，</span><br>
           <span class="outline-text" data-zh="显露出结构。" data-en="inside data.">显露出结构。</span>
@@ -159,6 +159,48 @@
             <div class="project-footer"><span data-zh="查看仓库" data-en="Open repository">查看仓库</span><span class="project-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
+      </div>
+    </section>
+
+    <section class="section reading-section" id="reading" aria-labelledby="reading-title">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / READING LIST</p>
+        <h2 id="reading-title" data-zh="推荐论文" data-en="Recommended papers">推荐论文</h2>
+        <span class="section-note" data-zh="从项目出发，理解背后的方法。" data-en="Methods behind the projects.">从项目出发，理解背后的方法。</span>
+      </div>
+
+      <div class="window reading-card reveal">
+        <div class="window-bar"><span data-zh="阅读清单.bib" data-en="reading-list.bib">阅读清单.bib</span><span class="window-controls" aria-hidden="true"><i></i><i></i></span></div>
+        <ol class="reading-list">
+          <li>
+            <a class="reading-item" href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer">
+              <span class="reading-number">01</span>
+              <div><span class="reading-meta">EFFICIENT AI · 2021 · ICLR 2022</span><h3>LoRA: Low-Rank Adaptation of Large Language Models</h3><p data-zh="理解低秩适配如何让小显存微调大模型，与 FinCUGE Tiny 直接相关。" data-en="How low-rank adaptation makes large-model fine-tuning possible on small GPUs — directly connected to FinCUGE Tiny.">理解低秩适配如何让小显存微调大模型，与 FinCUGE Tiny 直接相关。</p></div>
+              <span class="reading-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="reading-item" href="https://arxiv.org/abs/2006.08097" target="_blank" rel="noopener noreferrer">
+              <span class="reading-number">02</span>
+              <div><span class="reading-meta">FINANCIAL NLP · 2020 · ARXIV</span><h3>FinBERT: A Pretrained Language Model for Financial Communications</h3><p data-zh="了解金融语料预训练如何改善金融文本理解，连接金融科技与自然语言处理。" data-en="A useful bridge between financial technology and NLP through pretraining on financial communication.">了解金融语料预训练如何改善金融文本理解，连接金融科技与自然语言处理。</p></div>
+              <span class="reading-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="reading-item" href="https://arxiv.org/abs/2404.16130" target="_blank" rel="noopener noreferrer">
+              <span class="reading-number">03</span>
+              <div><span class="reading-meta">GRAPH + RAG · 2024 · ARXIV</span><h3>From Local to Global: A Graph RAG Approach to Query-Focused Summarization</h3><p data-zh="把图谱结构引入检索增强生成，对应知识图谱、多跳关联与复杂资料分析。" data-en="Bringing graph structure into retrieval-augmented generation for multi-hop reasoning and complex document analysis.">把图谱结构引入检索增强生成，对应知识图谱、多跳关联与复杂资料分析。</p></div>
+              <span class="reading-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="reading-item" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">
+              <span class="reading-number">04</span>
+              <div><span class="reading-meta">FOUNDATIONS · 2017 · NEURIPS</span><h3>Attention Is All You Need</h3><p data-zh="回到 Transformer 的起点，理解现代大模型、金融文本模型与 Agent 的共同基础。" data-en="The Transformer foundation beneath modern language models, financial NLP and agent systems.">回到 Transformer 的起点，理解现代大模型、金融文本模型与 Agent 的共同基础。</p></div>
+              <span class="reading-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ol>
       </div>
     </section>
   </main>
