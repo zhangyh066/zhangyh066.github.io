@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f0e9">
   <title>Yuhui — Data & AI</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261110-reading">
+  <link rel="stylesheet" href="styles.css?v=20261110-full">
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -16,7 +16,7 @@
       document.documentElement.dataset.theme = theme;
     } catch (_) {}
   </script>
-  <script src="script.js?v=20261110-reading" defer></script>
+  <script src="script.js?v=20261110-full" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-zh="跳到主要内容" data-en="Skip to content">跳到主要内容</a>
@@ -25,7 +25,9 @@
     <a class="brand" href="#top" aria-label="Yuhui home"><span class="brand-slash">//</span>yuhui<span class="cursor">_</span></a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#about" data-zh="关于" data-en="About">关于</a>
+      <a href="#experience" data-zh="经历" data-en="Experience">经历</a>
       <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+      <a href="#reading" data-zh="阅读" data-en="Reading">阅读</a>
       <a href="https://github.com/zhangyh066" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </nav>
     <div class="header-actions">
@@ -112,9 +114,45 @@
       </div>
     </section>
 
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / EXPERIENCE</p>
+        <h2 id="experience-title" data-zh="实习经历" data-en="Experience">实习经历</h2>
+        <span class="section-note" data-zh="在真实业务与研究中，把数据变成工具。" data-en="Turning data into tools in real business and research.">在真实业务与研究中，把数据变成工具。</span>
+      </div>
+
+      <div class="experience-grid">
+        <article class="window experience-card reveal">
+          <div class="window-bar"><span>SIEMENS / STRATEGY</span><span aria-hidden="true">[01]</span></div>
+          <div class="experience-body">
+            <div class="experience-heading"><h3 data-zh="西门子（中国）有限公司" data-en="Siemens (China) Co., Ltd.">西门子（中国）有限公司</h3><p data-zh="战略实习生 · 战略发展部 · 北京 · 2026.07—至今" data-en="Strategy Intern · Strategy Development · Beijing · Jul 2026—Present">战略实习生 · 战略发展部 · 北京 · 2026.07—至今</p></div>
+            <ul class="experience-points">
+              <li><strong data-zh="政策与项目情报管线" data-en="Policy & project intelligence">政策与项目情报管线</strong><span data-zh="用 AI Agent 串联政策追踪、批量采集、OCR、大模型识别与结构化入库，形成可检索知识库。" data-en="Built an AI-agent pipeline for policy tracking, collection, OCR, LLM extraction and a searchable knowledge base.">用 AI Agent 串联政策追踪、批量采集、OCR、大模型识别与结构化入库，形成可检索知识库。</span></li>
+              <li><strong data-zh="数据质量评测与流程迭代" data-en="Evaluation & process iteration">数据质量评测与流程迭代</strong><span data-zh="建立字段准确率、任务完成率与耗时评测，通过失败案例归集和回归重跑形成优化闭环。" data-en="Built an evaluation loop for extraction accuracy, task completion and latency, using failure analysis and regression runs.">建立字段准确率、任务完成率与耗时评测，通过失败案例归集和回归重跑形成优化闭环。</span></li>
+              <li><strong data-zh="设备知识图谱与 GraphRAG" data-en="Equipment knowledge graph & GraphRAG">设备知识图谱与 GraphRAG</strong><span data-zh="以 Neo4j 组织设备、别名与标准关系，并结合图谱检索和向量检索支持多跳分析。" data-en="Connected equipment, aliases and standards in Neo4j, combining graph and vector retrieval for multi-hop analysis.">以 Neo4j 组织设备、别名与标准关系，并结合图谱检索和向量检索支持多跳分析。</span></li>
+            </ul>
+            <div class="experience-metrics"><div><strong>60 → 20</strong><span data-zh="分钟 / 批次" data-en="minutes / batch">分钟 / 批次</span></div><div><strong>83K+</strong><span data-zh="设备别名" data-en="equipment aliases">设备别名</span></div><div><strong>500+</strong><span data-zh="可检索文档" data-en="searchable documents">可检索文档</span></div></div>
+          </div>
+        </article>
+
+        <article class="window experience-card reveal">
+          <div class="window-bar"><span>REMOTE SENSING / AI DATA</span><span aria-hidden="true">[02]</span></div>
+          <div class="experience-body">
+            <div class="experience-heading"><h3 data-zh="深圳数据经济研究院（香港中文大学）" data-en="Shenzhen Institute of Data Economy (CUHK)">深圳数据经济研究院（香港中文大学）</h3><p data-zh="科研助理 · 卫星遥感数据研究中心 · 深圳 · 2026.01—2026.03" data-en="Research Assistant · Satellite Remote Sensing Data Research Center · Shenzhen · Jan—Mar 2026">科研助理 · 卫星遥感数据研究中心 · 深圳 · 2026.01—2026.03</p></div>
+            <ul class="experience-points">
+              <li><strong data-zh="遥感数据与因子构建" data-en="Remote-sensing data & factors">遥感数据与因子构建</strong><span data-zh="基于 GDAL 与 SAM 搭建半自动标注管线，聚合夜间灯光与热效应特征，探索另类数据中的股价信号。" data-en="Built a semi-automated GDAL + SAM annotation pipeline and aggregated night-light and thermal features for alternative-data research.">基于 GDAL 与 SAM 搭建半自动标注管线，聚合夜间灯光与热效应特征，探索另类数据中的股价信号。</span></li>
+              <li><strong data-zh="AI-Ready 数据生产线" data-en="AI-ready data pipeline">AI-Ready 数据生产线</strong><span data-zh="用 DataFlow-Agent 串联 MinerU、清洗、脱敏与摘要，通过模型质量评估自动拦截低质数据。" data-en="Connected MinerU, cleaning, redaction and summarization with DataFlow-Agent, routing out low-quality data through model evaluation.">用 DataFlow-Agent 串联 MinerU、清洗、脱敏与摘要，通过模型质量评估自动拦截低质数据。</span></li>
+              <li><strong data-zh="多智能体工作流" data-en="Multi-agent workflow">多智能体工作流</strong><span data-zh="以 LangGraph 拆解检索、分析、生成与审核节点，将重复动作封装成可复用技能和 MCP 服务。" data-en="Used LangGraph for retrieval, analysis, generation and review, packaging repeated actions as reusable skills and MCP services.">以 LangGraph 拆解检索、分析、生成与审核节点，将重复动作封装成可复用技能和 MCP 服务。</span></li>
+            </ul>
+            <div class="experience-metrics"><div><strong>4</strong><span data-zh="协作智能体" data-en="collaborating agents">协作智能体</span></div><div><strong>3</strong><span data-zh="可复用 SKILL" data-en="reusable skills">可复用 SKILL</span></div><div><strong>2</strong><span data-zh="MCP 服务" data-en="MCP services">MCP 服务</span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section projects-section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading reveal">
-        <p class="section-index">02 / SELECTED WORK</p>
+        <p class="section-index">03 / SELECTED WORK</p>
         <h2 id="projects-title" data-zh="开源项目" data-en="Selected projects">开源项目</h2>
         <a class="section-note text-link" href="https://github.com/zhangyh066?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-zh="查看全部" data-en="View all">查看全部</span> ↗</a>
       </div>
@@ -126,6 +164,7 @@
             <div class="project-top"><span class="project-number">01</span><span class="project-type">PYTHON · DUCKDB · FASTAPI</span></div>
             <h3>Financial Empirical<br>Data Warehouse</h3>
             <p data-zh="企业财务实证数据仓库：真实 A 股数据管线、四层数仓架构、20+ 财务指标，以及 Stata / CSV 一键导出。" data-en="A financial data warehouse with real A-share pipelines, a four-layer architecture, 20+ metrics, and one-click Stata / CSV export.">企业财务实证数据仓库：真实 A 股数据管线、四层数仓架构、20+ 财务指标，以及 Stata / CSV 一键导出。</p>
+            <div class="project-evidence"><span>11 API</span><span data-zh="4 级名称消歧" data-en="4-level entity matching">4 级名称消歧</span></div>
             <div class="project-footer"><span data-zh="查看仓库" data-en="Open repository">查看仓库</span><span class="project-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
@@ -136,6 +175,7 @@
             <div class="project-top"><span class="project-number">02</span><span class="project-type">PYTHON · LORA · QWEN3</span></div>
             <h3>FinCUGE<br>Tiny</h3>
             <p data-zh="在 4GB 显卡上，用 LoRA 微调 Qwen3-0.6B，完成中文金融情绪分类、新闻分类与事件主体抽取。" data-en="Fine-tuning Qwen3-0.6B with LoRA on a 4GB GPU for Chinese financial sentiment, news classification and event extraction.">在 4GB 显卡上，用 LoRA 微调 Qwen3-0.6B，完成中文金融情绪分类、新闻分类与事件主体抽取。</p>
+            <div class="project-evidence"><span>4GB GPU</span><span data-zh="3 项金融任务" data-en="3 financial tasks">3 项金融任务</span></div>
             <div class="project-footer"><span data-zh="查看仓库" data-en="Open repository">查看仓库</span><span class="project-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
@@ -146,6 +186,7 @@
             <div class="project-top"><span class="project-number">03</span><span class="project-type">HTML · DATA VISUALIZATION</span></div>
             <h3>China<br>Chain</h3>
             <p data-zh="A 股产业链数据可视化平台，以真实客户与供应商披露构建供应关系图谱，呈现上中下游结构与沿链趋势。" data-en="An A-share supply-chain atlas built from real customer and supplier disclosures, mapping upstream and downstream relationships and trends.">A 股产业链数据可视化平台，以真实客户与供应商披露构建供应关系图谱，呈现上中下游结构与沿链趋势。</p>
+            <div class="project-evidence"><span data-zh="34 万+ 行明细" data-en="340K+ records">34 万+ 行明细</span><span data-zh="27 条产业链" data-en="27 supply chains">27 条产业链</span></div>
             <div class="project-footer"><span data-zh="查看仓库" data-en="Open repository">查看仓库</span><span class="project-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
@@ -156,15 +197,44 @@
             <div class="project-top"><span class="project-number">04</span><span class="project-type">HTML · MINERU · DATAFLOW</span></div>
             <h3>AI-Ready<br>Data Pipeline</h3>
             <p data-zh="基于 MinerU 与 DataFlow-Agent 的 AI-Ready 数据自动化生产线，让原始文档更顺畅地进入 AI 工作流。" data-en="An automated AI-ready data pipeline built with MinerU and DataFlow-Agent, moving raw documents smoothly into AI workflows.">基于 MinerU 与 DataFlow-Agent 的 AI-Ready 数据自动化生产线，让原始文档更顺畅地进入 AI 工作流。</p>
+            <div class="project-evidence"><span data-zh="提取 · 清洗 · 脱敏 · 摘要" data-en="Extract · Clean · Redact · Summarize">提取 · 清洗 · 脱敏 · 摘要</span></div>
             <div class="project-footer"><span data-zh="查看仓库" data-en="Open repository">查看仓库</span><span class="project-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
       </div>
     </section>
 
+    <section class="section education-section" id="education" aria-labelledby="education-title">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / EDUCATION & SKILLS</p>
+        <h2 id="education-title" data-zh="教育与技能" data-en="Education & skills">教育与技能</h2>
+        <span class="section-note" data-zh="金融基础，与可落地的工程能力。" data-en="Financial foundations with practical engineering skills.">金融基础，与可落地的工程能力。</span>
+      </div>
+
+      <div class="education-grid">
+        <article class="window education-card reveal">
+          <div class="window-bar"><span>education.log</span><span class="window-controls" aria-hidden="true"><i></i><i></i></span></div>
+          <div class="education-body">
+            <div class="education-entry"><span class="education-date">2025.09 — 2027.07</span><h3 data-zh="东北财经大学" data-en="Dongbei University of Finance and Economics">东北财经大学</h3><p data-zh="金融专硕 · 金融科技方向 · 硕士" data-en="Master of Finance · Financial Technology">金融专硕 · 金融科技方向 · 硕士</p><strong>GPA 3.58 / 4.0 · TOP 20%</strong></div>
+            <div class="education-entry"><span class="education-date">2020.09 — 2024.07</span><h3 data-zh="吉林大学珠海学院" data-en="Jilin University Zhuhai College">吉林大学珠海学院</h3><p data-zh="金融工程 · 本科" data-en="Bachelor of Financial Engineering">金融工程 · 本科</p><strong>GPA 3.36 / 4.0 · TOP 20%</strong></div>
+            <p class="education-awards" data-zh="校级奖学金 × 2 · 广东省经济决策大赛三等奖 · 学术与科技创新奖 · CET-6" data-en="Two university scholarships · Guangdong Economic Decision Competition, Third Prize · Academic & Technological Innovation Award · CET-6">校级奖学金 × 2 · 广东省经济决策大赛三等奖 · 学术与科技创新奖 · CET-6</p>
+          </div>
+        </article>
+
+        <article class="window skills-card reveal">
+          <div class="window-bar"><span>toolkit.json</span><span aria-hidden="true">[+]</span></div>
+          <div class="skills-body">
+            <div class="skill-group"><h3>DATA & ENGINEERING</h3><div class="skill-tags"><span>Python</span><span>SQL</span><span>R</span><span>DuckDB</span><span>MySQL</span><span>ETL</span><span>FastAPI</span></div></div>
+            <div class="skill-group"><h3>AI & AGENTS</h3><div class="skill-tags"><span>LoRA</span><span>LangGraph</span><span>GraphRAG</span><span>MCP</span><span>MinerU</span><span>OCR + LLM</span></div></div>
+            <div class="skill-group"><h3>ANALYSIS & VISUALIZATION</h3><div class="skill-tags"><span data-zh="时间序列" data-en="Time series">时间序列</span><span data-zh="假设检验" data-en="Hypothesis testing">假设检验</span><span>K-Means</span><span>t-SNE</span><span>Matplotlib</span><span>Neo4j</span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section reading-section" id="reading" aria-labelledby="reading-title">
       <div class="section-heading reveal">
-        <p class="section-index">03 / READING LIST</p>
+        <p class="section-index">05 / READING LIST</p>
         <h2 id="reading-title" data-zh="推荐论文" data-en="Recommended papers">推荐论文</h2>
         <span class="section-note" data-zh="从项目出发，理解背后的方法。" data-en="Methods behind the projects.">从项目出发，理解背后的方法。</span>
       </div>

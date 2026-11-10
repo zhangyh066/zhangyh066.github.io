@@ -620,3 +620,75 @@ html[data-theme="dark"] .reading-number { color: #d5a285; }
   .reading-item h3 { font-size: 17px; }
   .reading-item p { font-size: 12px; }
 }
+
+.about-section, .experience-section, .education-section { min-height: 100svh; }
+.experience-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; align-items: start; }
+.experience-card:nth-child(2) { margin-top: 64px; }
+.experience-body { padding: 27px; }
+.experience-heading { padding-bottom: 21px; border-bottom: 1px solid var(--line); }
+.experience-heading h3 { margin: 0; font-family: var(--sans); font-size: 21px; line-height: 1.45; letter-spacing: -.025em; }
+.experience-heading p { margin: 11px 0 0; color: var(--muted); font-family: var(--sans); font-size: 11px; line-height: 1.7; }
+.experience-points { margin: 0; padding: 6px 0 0; list-style: none; }
+.experience-points li { position: relative; padding: 16px 0 16px 16px; border-bottom: 1px solid var(--grid); }
+.experience-points li::before { content: ""; position: absolute; left: 0; top: 24px; width: 5px; height: 5px; background: var(--cyan); }
+.experience-points strong { display: block; margin-bottom: 7px; font-family: var(--sans); font-size: 13px; }
+.experience-points span { display: block; color: var(--muted); font-family: var(--sans); font-size: 12px; line-height: 1.8; }
+.experience-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 22px; }
+.experience-metrics div { min-width: 0; }
+.experience-metrics strong { display: block; color: var(--blue); font-size: 23px; line-height: 1; letter-spacing: -.05em; }
+.experience-metrics span { display: block; margin-top: 8px; color: var(--muted); font-family: var(--sans); font-size: 9px; line-height: 1.4; }
+
+.education-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 1fr); gap: 34px; align-items: start; }
+.skills-card { margin-top: 58px; }
+.education-body { padding: 27px; }
+.education-entry { padding: 5px 0 25px; }
+.education-entry + .education-entry { padding-top: 25px; border-top: 1px solid var(--line); }
+.education-date { display: block; margin-bottom: 12px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.education-entry h3 { margin: 0; font-family: var(--sans); font-size: 23px; letter-spacing: -.03em; }
+.education-entry p { margin: 10px 0; color: var(--muted); font-family: var(--sans); font-size: 13px; }
+.education-entry strong { color: var(--blue); font-size: 11px; letter-spacing: .04em; }
+.education-awards { margin: 0; padding-top: 21px; border-top: 1px solid var(--line); color: var(--muted); font-family: var(--sans); font-size: 11px; line-height: 1.9; }
+.skills-body { padding: 13px 25px; }
+.skill-group { padding: 20px 0; }
+.skill-group + .skill-group { border-top: 1px solid var(--grid); }
+.skill-group h3 { margin: 0 0 15px; color: var(--blue); font-size: 10px; letter-spacing: .08em; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags span { padding: 6px 9px; background: color-mix(in srgb, var(--titlebar) 42%, transparent); border: 1px solid var(--line); font-family: var(--sans); font-size: 11px; }
+.project-evidence { display: flex; flex-wrap: wrap; gap: 8px; margin: -7px 0 24px; }
+.project-evidence span { padding: 5px 8px; color: var(--blue); background: color-mix(in srgb, var(--titlebar) 40%, transparent); border: 1px solid var(--grid); font-size: 9px; font-weight: 800; }
+
+.window {
+  --enter-x: 0px;
+  --enter-scale: 1;
+  --enter-rotate: 0deg;
+  translate: var(--enter-x) var(--parallax-y);
+  scale: var(--enter-scale);
+  rotate: var(--enter-rotate);
+}
+.reading-item { will-change: transform, opacity; }
+
+@media (max-width: 1050px) {
+  .experience-grid, .education-grid { grid-template-columns: 1fr; }
+  .experience-card:nth-child(2), .skills-card { margin-top: 0; }
+  .experience-section, .education-section { min-height: auto; }
+}
+
+@media (max-width: 760px) {
+  .about-section { min-height: 100svh; }
+  .experience-body, .education-body { padding: 22px; }
+  .experience-heading h3 { font-size: 19px; }
+  .experience-metrics strong { font-size: 20px; }
+  .skills-body { padding: 10px 21px; }
+  .project-evidence { margin-top: -4px; }
+}
+
+.main-nav { gap: 24px; }
+@media (max-width: 900px) {
+  .main-nav { display: none; }
+  .site-header { grid-template-columns: 1fr auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .window { translate: none !important; scale: 1 !important; rotate: 0deg !important; }
+  .reading-item { opacity: 1 !important; transform: none !important; will-change: auto; }
+}
