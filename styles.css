@@ -692,3 +692,23 @@ html[data-theme="dark"] .reading-number { color: #d5a285; }
   .window { translate: none !important; scale: 1 !important; rotate: 0deg !important; }
   .reading-item { opacity: 1 !important; transform: none !important; will-change: auto; }
 }
+
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform-origin: 62% 45%;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+.scene-layer.is-active { opacity: 1; }
+.education-courses { padding-top: 22px; border-top: 1px solid var(--line); }
+.education-courses h3 { margin: 0 0 14px; color: var(--blue); font-size: 10px; letter-spacing: .08em; }
+
+@media (max-width: 760px) {
+  .scene-layer { transform-origin: 58% 65%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-layer { transform: none !important; transition: none !important; will-change: auto; }
+}

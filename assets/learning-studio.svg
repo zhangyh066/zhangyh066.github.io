@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 820" fill="none">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0F3E9"/><stop offset="1" stop-color="#8BA8AC"/></linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9CB4B0"/><stop offset="1" stop-color="#536E75"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#42616B"/><stop offset="1" stop-color="#263F4A"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E2E5DA" stop-opacity=".2"/><stop offset="1" stop-color="#A7BBB4" stop-opacity=".7"/></linearGradient>
+    <filter id="shadow" x="-40%" y="-80%" width="180%" height="260%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="panel" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dx="6" dy="8" stdDeviation="0" flood-color="#405B62" flood-opacity=".18"/></filter>
+  </defs>
+  <style>
+    .frame{stroke:#49666E;stroke-width:2;stroke-linejoin:round}.fine{stroke:#789294;stroke-width:1}.label{font:700 10px Consolas,monospace;fill:#415E66;letter-spacing:1.3px}.micro{font:700 8px Consolas,monospace;fill:#597579;letter-spacing:.7px}.white{font:700 9px Consolas,monospace;fill:#F6F1E5;letter-spacing:1px}.dash{stroke-dasharray:5 8;animation:flow 4s linear infinite}.float{animation:float 7s ease-in-out infinite}.pulse{animation:pulse 3s ease-in-out infinite}.chart{stroke-dasharray:260;animation:draw 6s ease-in-out infinite}@keyframes flow{to{stroke-dashoffset:-52}}@keyframes float{50%{transform:translateY(-8px)}}@keyframes pulse{50%{opacity:.3}}@keyframes draw{0%{stroke-dashoffset:260}65%,100%{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <ellipse cx="486" cy="731" rx="380" ry="50" fill="#526D70" opacity=".15" filter="url(#shadow)"/>
+  <path d="M50 688L476 516L893 677L466 805L50 688Z" fill="url(#ground)"/>
+  <path d="M50 688L466 805L893 677M160 727L582 563M274 767L695 603M205 643L628 755M317 600L742 713" class="fine" opacity=".3"/>
+
+  <g filter="url(#panel)">
+    <path d="M263 139h519v301H263z" fill="#EDF0E5" fill-opacity=".82" stroke="#769093"/>
+    <path d="M263 139h519v36H263z" fill="#C9D7CF"/>
+    <circle cx="284" cy="157" r="4" fill="#B77B5E"/><circle cx="298" cy="157" r="4" fill="#789591"/>
+    <text x="321" y="162" class="label">FINANCIAL TECHNOLOGY / RESEARCH DESK</text>
+    <path d="M292 202h461v208H292z" fill="url(#screen)" class="frame"/>
+    <path d="M315 229h180M315 251h118M315 370h420M315 337h420M315 304h420M315 271h420" stroke="#95B4B1" stroke-opacity=".22"/>
+    <path d="M347 343v-55M340 298h14M340 333h14M390 315v-46M383 279h14M383 305h14M433 357v-72M426 296h14M426 345h14M476 326v-54M469 282h14M469 315h14M519 303v-44M512 267h14M512 294h14" stroke="#C38A68" stroke-width="4"/>
+    <path d="M347 309v24M390 283v22M433 301v44M476 288v27M519 274v20" stroke="#D9E8DF" stroke-width="2"/>
+    <path d="M321 355L370 333L414 344L466 305L511 319L558 277L612 295L665 247L724 262" stroke="#A8CEC7" stroke-width="3" class="chart"/>
+    <path d="M321 383h401" stroke="#95B4B1" stroke-opacity=".3"/>
+    <text x="321" y="222" class="micro" style="fill:#B9D1CC">MARKET / RISK / SIGNAL</text>
+    <text x="650" y="393" class="micro" style="fill:#B9D1CC">T + 20</text>
+  </g>
+
+  <g class="float">
+    <path d="M618 115l65-43 66 42-66 24-65-23Z" fill="#425F68" class="frame"/>
+    <path d="M683 138v34c-27 20-64 6-64-13v-32" fill="#789698" class="frame"/>
+    <path d="M749 114v54l-12 8" class="frame"/>
+    <circle cx="737" cy="178" r="5" fill="#B77B5E" class="pulse"/>
+  </g>
+
+  <g>
+    <path d="M90 573l140 42v100L90 673v-100Z" fill="#A8BAB3" class="frame"/>
+    <path d="M230 615l68-31v100l-68 31v-100Z" fill="#637F83" class="frame"/>
+    <path d="M90 573l68-31 140 42-68 31-140-42Z" fill="#E8E3D6" class="frame"/>
+    <path d="M105 545l130 39v31l-130-39v-31Z" fill="#C2B8A6" class="frame"/>
+    <path d="M105 545l65-29 130 39-65 29-130-39Z" fill="#E8E3D6" class="frame"/>
+    <path d="M117 514l118 36v34l-118-36v-34Z" fill="#7E9995" class="frame"/>
+    <path d="M117 514l58-27 118 36-58 27-118-36Z" fill="#E8E3D6" class="frame"/>
+    <path d="M130 484l105 31v34l-105-31v-34Z" fill="#C18A69" class="frame"/>
+    <path d="M130 484l52-25 105 31-52 25-105-31Z" fill="#E8E3D6" class="frame"/>
+    <text x="140" y="500" class="micro" transform="rotate(17 140 500)">QUANT FINANCE</text>
+    <path d="M106 589l104 31M106 609l104 31M106 629l104 31M106 649l104 31" class="fine"/>
+    <text x="102" y="460" class="label">METHOD / FOUNDATIONS</text>
+  </g>
+
+  <g>
+    <path d="M303 582L505 522L730 605L529 671L303 582Z" fill="#D9D7C9" class="frame"/>
+    <path d="M303 582v23l226 87 201-65v-22L529 671l-226-89Z" fill="#8DA5A2" class="frame"/>
+    <path d="M341 577L505 533L692 602L529 657L341 577Z" fill="#B4C4BB" stroke="#6B8586"/>
+    <path d="M393 555L506 477L646 526L532 604L393 555Z" fill="#405D66" class="frame"/>
+    <path d="M416 550L509 492L620 529L527 586L416 550Z" fill="#E7EEE4" stroke="#789294"/>
+    <path d="M452 544l48-31M471 552l48-31M490 560l48-31M509 568l48-31M528 575l48-31" stroke="#6F8E93" stroke-width="4"/>
+    <path d="M532 604v53M393 555l-20-21M646 526l20-20" class="frame"/>
+    <path d="M473 596l59 20 59-25-59-20-59 25Z" fill="#C28A68" opacity=".75"/>
+    <text x="381" y="676" class="label">PYTHON · DATA · MODELS</text>
+  </g>
+
+  <g filter="url(#panel)">
+    <path d="M718 473h154v132H718z" fill="#F3F0E5" fill-opacity=".9" stroke="#789294"/>
+    <path d="M718 473h154v27H718z" fill="#D8C8B9"/>
+    <text x="732" y="492" class="micro">COURSE INDEX</text>
+    <path d="M738 525h96M738 548h96M738 571h96" class="fine"/>
+    <text x="738" y="520" class="micro">01 / FINTECH</text><text x="738" y="543" class="micro">02 / QUANT</text><text x="738" y="566" class="micro">03 / RISK</text>
+    <circle cx="851" cy="519" r="4" fill="#B77B5E"/><circle cx="851" cy="542" r="4" fill="#6C8E93"/><circle cx="851" cy="565" r="4" fill="#8AA195"/>
+  </g>
+
+  <g class="float">
+    <circle cx="162" cy="277" r="61" fill="#DCE5DC" fill-opacity=".7" stroke="#789294"/>
+    <ellipse cx="162" cy="277" rx="87" ry="29" stroke="#B77B5E" stroke-width="2"/>
+    <text x="135" y="297" style="font:700 54px Georgia,serif;fill:#4A6870">α</text>
+    <path d="M162 216v-38M142 190l20-19 20 19" class="frame"/>
+  </g>
+  <g class="float">
+    <circle cx="827" cy="676" r="44" fill="#DCE5DC" fill-opacity=".7" stroke="#789294"/>
+    <text x="809" y="694" style="font:700 40px Georgia,serif;fill:#4A6870">Σ</text>
+  </g>
+  <path d="M229 584L303 582M532 604l186-58M529 671l128 48" stroke="#A9755B" stroke-width="2" class="dash"/>
+  <g fill="#B77B5E"><rect x="85" y="227" width="7" height="7"/><rect x="101" y="211" width="4" height="4"/><rect x="813" y="396" width="7" height="7"/><rect x="843" y="622" width="5" height="5"/></g>
+</svg>

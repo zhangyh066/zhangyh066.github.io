@@ -71,61 +71,81 @@ const readingCard = document.querySelector('.reading-card');
 const readingItems = [...document.querySelectorAll('.reading-item')];
 const speeds = [0.1, -0.075, 0.065, -0.065, 0.075, -0.055, 0.085, -0.06, 0.065, -0.06, 0.05];
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const sceneStops = [
-  { at: 0, scale: 1, x: 0, y: 0, rotation: 0 },
-  { at: 0.1, scale: 1.3, x: -0.1, y: -0.05, rotation: -0.8 },
-  { at: 0.24, scale: 1.58, x: -0.2, y: -0.12, rotation: 1.2 },
-  { at: 0.4, scale: 1.25, x: 0.03, y: -0.2, rotation: -1.4 },
-  { at: 0.57, scale: 1.62, x: -0.14, y: -0.26, rotation: 1 },
-  { at: 0.74, scale: 1.34, x: 0.04, y: -0.18, rotation: -1 },
-  { at: 0.9, scale: 1.68, x: -0.18, y: -0.25, rotation: 0.8 },
-  { at: 1, scale: 1.42, x: 0.02, y: -0.3, rotation: 0 },
+const sceneLayers = [...document.querySelectorAll('.scene-layer')];
+const sceneAnchors = [
+  { name: 'observatory', element: hero },
+  { name: 'policy', element: document.getElementById('experience') },
+  { name: 'workshop', element: document.getElementById('projects') },
+  { name: 'studio', element: document.getElementById('education') },
+  { name: 'library', element: document.getElementById('reading') },
 ];
+const sceneMotion = {
+  observatory: { from: [1, 0, 0, 0], to: [1.32, -0.12, -0.08, -1] },
+  policy: { from: [1.05, 0.07, 0.02, 1], to: [1.2, -0.06, -0.08, -0.6] },
+  workshop: { from: [1.02, -0.04, -0.03, -1], to: [1.2, 0.07, 0.03, 1.2] },
+  studio: { from: [1.04, 0.06, 0.02, 0.6], to: [1.18, -0.05, -0.06, -0.8] },
+  library: { from: [1.02, -0.03, 0.01, -0.6], to: [1.16, 0.04, -0.06, 0.8] },
+};
 let scrollFrame = 0;
 let sceneFrame = 0;
-let targetSceneProgress = 0;
-let currentSceneProgress = -1;
+let targetScrollY = 0;
+let currentScrollY = -1;
 let lastSceneTime = 0;
 
-function sampleScene(progress) {
-  const nextIndex = sceneStops.findIndex((stop) => stop.at >= progress);
-  if (nextIndex <= 0) return sceneStops[0];
-  if (nextIndex === -1) return sceneStops[sceneStops.length - 1];
-  const a = sceneStops[nextIndex - 1];
-  const b = sceneStops[nextIndex];
-  const linear = (progress - a.at) / (b.at - a.at);
-  const t = linear * linear * (3 - 2 * linear);
-  return {
-    scale: a.scale + (b.scale - a.scale) * t,
-    x: a.x + (b.x - a.x) * t,
-    y: a.y + (b.y - a.y) * t,
-    rotation: a.rotation + (b.rotation - a.rotation) * t,
-  };
-}
-
-function renderScene(progress) {
-  const sample = sampleScene(progress);
+function renderLayer(layer, progress, opacity, transitionY) {
+  const motion = sceneMotion[layer.dataset.scene];
   const mobile = window.innerWidth <= 760;
   const movement = mobile ? 0.32 : 1;
-  const scale = mobile ? 1 + (sample.scale - 1) * 0.68 : sample.scale;
-  heroArt.style.setProperty('--scene-scale', scale.toFixed(3));
-  heroArt.style.setProperty('--scene-x', `${(sample.x * window.innerWidth * movement).toFixed(1)}px`);
-  heroArt.style.setProperty('--scene-y', `${(sample.y * window.innerHeight * movement).toFixed(1)}px`);
-  heroArt.style.setProperty('--scene-rotate', `${(sample.rotation * movement).toFixed(2)}deg`);
+  const eased = progress * progress * (3 - 2 * progress);
+  const values = motion.from.map((value, index) => value + (motion.to[index] - value) * eased);
+  const scale = mobile ? 1 + (values[0] - 1) * 0.68 : values[0];
+  const x = values[1] * window.innerWidth * movement;
+  const y = values[2] * window.innerHeight * movement + transitionY * movement;
+  layer.style.opacity = opacity.toFixed(3);
+  layer.style.visibility = opacity < 0.01 ? 'hidden' : 'visible';
+  layer.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${scale.toFixed(3)}) rotate(${values[3].toFixed(2)}deg)`;
+}
+
+function renderScenes(scrollY, staticOnly = false) {
+  const viewportHeight = window.innerHeight;
+  const position = scrollY + viewportHeight * 0.62;
+  let activeIndex = 0;
+  sceneAnchors.forEach((anchor, index) => {
+    if (position >= anchor.element.offsetTop) activeIndex = index;
+  });
+  const active = sceneAnchors[activeIndex];
+  const next = sceneAnchors[activeIndex + 1];
+  const start = active.element === hero ? 0 : active.element.offsetTop - viewportHeight * 0.62;
+  const end = next ? next.element.offsetTop - viewportHeight * 0.62 : document.documentElement.scrollHeight;
+  const localProgress = clamp((position - start) / Math.max(1, end - start), 0, 1);
+  const mix = next && !staticOnly
+    ? clamp((position - (next.element.offsetTop - viewportHeight * 0.42)) / (viewportHeight * 0.42), 0, 1)
+    : 0;
+
+  sceneLayers.forEach((layer, index) => {
+    if (index === activeIndex) {
+      renderLayer(layer, localProgress, 1 - mix, -mix * 40);
+    } else if (index === activeIndex + 1) {
+      renderLayer(layer, 0, mix, (1 - mix) * 50);
+    } else {
+      layer.style.opacity = '0';
+      layer.style.visibility = 'hidden';
+    }
+  });
 }
 
 function animateScene(time) {
-  if (currentSceneProgress < 0) currentSceneProgress = targetSceneProgress;
+  if (currentScrollY < 0) currentScrollY = targetScrollY;
   const deltaTime = lastSceneTime ? Math.min((time - lastSceneTime) / 1000, 0.05) : 1 / 60;
   lastSceneTime = time;
-  const difference = targetSceneProgress - currentSceneProgress;
-  currentSceneProgress += difference * (1 - Math.exp(-deltaTime * 12));
-  renderScene(currentSceneProgress);
-  if (Math.abs(difference) > 0.0001) {
+  const difference = targetScrollY - currentScrollY;
+  currentScrollY += difference * (1 - Math.exp(-deltaTime * 12));
+  renderScenes(currentScrollY);
+  if (Math.abs(difference) > 0.5) {
     sceneFrame = requestAnimationFrame(animateScene);
   } else {
-    currentSceneProgress = targetSceneProgress;
-    renderScene(currentSceneProgress);
+    currentScrollY = targetScrollY;
+    renderScenes(currentScrollY);
     sceneFrame = 0;
     lastSceneTime = 0;
   }
@@ -136,12 +156,11 @@ function updateScrollEffects() {
   const scrollY = window.scrollY;
   const viewportHeight = window.innerHeight;
   const viewportWidth = window.innerWidth;
-  const maxScroll = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
   header.classList.toggle('is-scrolled', scrollY > 24);
-  targetSceneProgress = clamp(scrollY / maxScroll, 0, 1);
+  targetScrollY = scrollY;
 
   if (reducedMotion.matches) {
-    renderScene(targetSceneProgress);
+    renderScenes(targetScrollY, true);
     return;
   }
 

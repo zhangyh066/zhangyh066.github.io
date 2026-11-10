@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f0e9">
   <title>Yuhui — Data & AI</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261110-full">
+  <link rel="stylesheet" href="styles.css?v=20261110-scenes">
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -16,7 +16,7 @@
       document.documentElement.dataset.theme = theme;
     } catch (_) {}
   </script>
-  <script src="script.js?v=20261110-full" defer></script>
+  <script src="script.js?v=20261110-scenes" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-zh="跳到主要内容" data-en="Skip to content">跳到主要内容</a>
@@ -60,7 +60,11 @@
       </div>
 
       <div class="hero-art" id="hero-art" aria-hidden="true">
-        <img src="assets/data-city.svg" alt="" width="940" height="820">
+        <div class="scene-layer is-active" data-scene="observatory"><img src="assets/data-city.svg" alt="" width="940" height="820" decoding="async"></div>
+        <div class="scene-layer" data-scene="policy"><img src="assets/policy-lab.svg" alt="" width="940" height="820" decoding="async"></div>
+        <div class="scene-layer" data-scene="workshop"><img src="assets/project-workshop.svg" alt="" width="940" height="820" decoding="async"></div>
+        <div class="scene-layer" data-scene="studio"><img src="assets/learning-studio.svg" alt="" width="940" height="820" decoding="async"></div>
+        <div class="scene-layer" data-scene="library"><img src="assets/reading-library.svg" alt="" width="940" height="820" decoding="async"></div>
       </div>
 
       <a class="scroll-cue" href="#about"><span data-zh="向下探索" data-en="Scroll to explore">向下探索</span><span class="scroll-line"></span><span aria-hidden="true">↓</span></a>
@@ -216,8 +220,7 @@
           <div class="window-bar"><span>education.log</span><span class="window-controls" aria-hidden="true"><i></i><i></i></span></div>
           <div class="education-body">
             <div class="education-entry"><span class="education-date">2025.09 — 2027.07</span><h3 data-zh="东北财经大学" data-en="Dongbei University of Finance and Economics">东北财经大学</h3><p data-zh="金融专硕 · 金融科技方向 · 硕士" data-en="Master of Finance · Financial Technology">金融专硕 · 金融科技方向 · 硕士</p><strong>GPA 3.58 / 4.0 · TOP 20%</strong></div>
-            <div class="education-entry"><span class="education-date">2020.09 — 2024.07</span><h3 data-zh="吉林大学珠海学院" data-en="Jilin University Zhuhai College">吉林大学珠海学院</h3><p data-zh="金融工程 · 本科" data-en="Bachelor of Financial Engineering">金融工程 · 本科</p><strong>GPA 3.36 / 4.0 · TOP 20%</strong></div>
-            <p class="education-awards" data-zh="校级奖学金 × 2 · 广东省经济决策大赛三等奖 · 学术与科技创新奖 · CET-6" data-en="Two university scholarships · Guangdong Economic Decision Competition, Third Prize · Academic & Technological Innovation Award · CET-6">校级奖学金 × 2 · 广东省经济决策大赛三等奖 · 学术与科技创新奖 · CET-6</p>
+            <div class="education-courses"><h3>CORE COURSES</h3><div class="skill-tags"><span data-zh="Python 与金融数据分析" data-en="Python & Financial Data Analysis">Python 与金融数据分析</span><span data-zh="金融科技分析" data-en="Financial Technology Analysis">金融科技分析</span><span data-zh="量化金融" data-en="Quantitative Finance">量化金融</span><span data-zh="金融机构风险管理" data-en="Financial Risk Management">金融机构风险管理</span><span data-zh="区块链与数字货币" data-en="Blockchain & Digital Currency">区块链与数字货币</span></div></div>
           </div>
         </article>
 

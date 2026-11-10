@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 820" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FCF8EC"/><stop offset="1" stop-color="#D8D2C3"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EDF2E8"/><stop offset="1" stop-color="#88A7AB"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E2E5DA" stop-opacity=".15"/><stop offset="1" stop-color="#A7BBB4" stop-opacity=".65"/></linearGradient>
+    <filter id="shadow" x="-40%" y="-80%" width="180%" height="260%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="panel" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dx="6" dy="8" stdDeviation="0" flood-color="#405B62" flood-opacity=".18"/></filter>
+  </defs>
+  <style>
+    .frame{stroke:#49666E;stroke-width:2;stroke-linejoin:round}.fine{stroke:#789294;stroke-width:1}.label{font:700 10px Consolas,monospace;fill:#415E66;letter-spacing:1.2px}.micro{font:700 8px Consolas,monospace;fill:#597579;letter-spacing:.7px}.white{font:700 9px Consolas,monospace;fill:#F6F1E5;letter-spacing:1px}.float{animation:float 7s ease-in-out infinite}.float2{animation:float 8s ease-in-out infinite reverse}.spin{transform-origin:470px 413px;animation:spin 36s linear infinite}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:4 8;animation:flow 4s linear infinite}@keyframes float{50%{transform:translateY(-9px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.3}}@keyframes flow{to{stroke-dashoffset:-48}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <ellipse cx="475" cy="731" rx="370" ry="49" fill="#536D70" opacity=".14" filter="url(#shadow)"/>
+  <path d="M63 693L473 532L881 679L469 803L63 693Z" fill="url(#ground)"/>
+  <g class="spin">
+    <ellipse cx="470" cy="413" rx="326" ry="152" stroke="#A9755B" stroke-width="2" stroke-dasharray="4 11"/>
+    <circle cx="144" cy="413" r="7" fill="#F7F2E6" stroke="#A9755B" stroke-width="2"/>
+    <circle cx="796" cy="413" r="7" fill="#F7F2E6" stroke="#A9755B" stroke-width="2"/>
+    <circle cx="470" cy="261" r="6" fill="#F7F2E6" stroke="#A9755B" stroke-width="2"/>
+  </g>
+  <path d="M250 329L378 443M576 433L701 327M372 511L288 596M577 506L672 590" stroke="#879B97" class="flow"/>
+
+  <g class="float" filter="url(#panel)">
+    <path d="M83 203h245v190H83z" fill="#F5F1E6" fill-opacity=".9" stroke="#789294"/>
+    <path d="M83 203h245v30H83z" fill="#C9D7CF"/>
+    <text x="100" y="224" class="label">01 / LoRA · 2021</text>
+    <path d="M113 270h72v72h-72zM221 270h72v72h-72z" fill="url(#glass)" stroke="#607E85"/>
+    <path d="M126 283h46v46h-46zM234 283h46v46h-46z" fill="#F3F0E5" stroke="#8AA19E"/>
+    <path d="M185 306h36" stroke="#B77B5E" stroke-width="3"/>
+    <path d="M199 297l13 9-13 9" stroke="#B77B5E" stroke-width="3"/>
+    <text x="126" y="363" class="micro">FULL MATRIX</text><text x="231" y="363" class="micro">LOW RANK</text>
+    <path d="M126 314l18-17 18 17M234 314l18-17 18 17" class="fine"/>
+  </g>
+
+  <g class="float2" filter="url(#panel)">
+    <path d="M615 195h245v190H615z" fill="#F5F1E6" fill-opacity=".9" stroke="#789294"/>
+    <path d="M615 195h245v30H615z" fill="#D8C8B9"/>
+    <text x="632" y="216" class="label">02 / FinBERT · 2020</text>
+    <path d="M645 337h187M645 307h187M645 277h187" stroke="#9AAEA9" stroke-opacity=".35"/>
+    <path d="M654 327v-37M680 337v-67M706 318v-37M732 301v-48M758 327v-28M784 311v-54" stroke="#567780" stroke-width="10"/>
+    <path d="M654 302v13M680 282v17M706 294v13M732 270v16M758 305v13M784 274v20" stroke="#B77B5E" stroke-width="5"/>
+    <text x="649" y="363" class="micro">LANGUAGE FOR FINANCE</text>
+  </g>
+
+  <g class="float2" filter="url(#panel)">
+    <path d="M89 477h231v181H89z" fill="#F5F1E6" fill-opacity=".9" stroke="#789294"/>
+    <path d="M89 477h231v30H89z" fill="#D8C8B9"/>
+    <text x="105" y="498" class="label">04 / TRANSFORMER</text>
+    <path d="M135 541h39v39h-39zM227 541h39v39h-39zM135 598h39v39h-39zM227 598h39v39h-39z" fill="url(#glass)" stroke="#607E85"/>
+    <path d="M174 560h53M154 580v18M247 580v18M174 618h53" stroke="#B77B5E" stroke-width="2"/>
+    <circle cx="201" cy="560" r="5" fill="#B77B5E"/><circle cx="201" cy="618" r="5" fill="#B77B5E"/>
+    <text x="119" y="531" class="micro">Q</text><text x="237" y="531" class="micro">K</text><text x="119" y="649" class="micro">V</text><text x="237" y="649" class="micro">ATTN</text>
+  </g>
+
+  <g class="float" filter="url(#panel)">
+    <path d="M625 468h235v190H625z" fill="#F5F1E6" fill-opacity=".9" stroke="#789294"/>
+    <path d="M625 468h235v30H625z" fill="#C9D7CF"/>
+    <text x="642" y="489" class="label">03 / GraphRAG · 2024</text>
+    <path d="M658 568L700 526L751 539L805 518M700 526L717 606L774 615L751 539M774 615L823 575L805 518M658 568L717 606M751 539L823 575" class="frame"/>
+    <circle cx="658" cy="568" r="9" fill="#B77B5E"/><circle cx="700" cy="526" r="8" fill="#6D9097"/><circle cx="751" cy="539" r="11" fill="#425F68"/><circle cx="805" cy="518" r="7" fill="#B77B5E"/><circle cx="717" cy="606" r="8" fill="#8BA698"/><circle cx="774" cy="615" r="8" fill="#6D9097"/><circle cx="823" cy="575" r="7" fill="#425F68"/>
+    <text x="658" y="642" class="micro">GRAPH + RETRIEVAL</text>
+  </g>
+
+  <g filter="url(#panel)">
+    <path d="M333 592c52-28 102-19 139 11 37-30 87-39 139-11v132c-52-27-102-18-139 11-37-29-87-38-139-11V592Z" fill="#C4C1B4" class="frame"/>
+    <path d="M319 574c52-28 108-20 153 14v133c-45-34-101-42-153-14V574Z" fill="url(#paper)" class="frame"/>
+    <path d="M472 588c45-34 101-42 153-14v133c-52-28-108-20-153 14V588Z" fill="url(#paper)" class="frame"/>
+    <path d="M472 588v133" class="frame"/>
+    <path d="M339 601c42-14 77-7 110 15M339 620c42-14 77-7 110 15M339 639c42-14 77-7 110 15M339 658c42-14 77-7 110 15M495 616c33-22 68-29 110-15M495 635c33-22 68-29 110-15M495 654c33-22 68-29 110-15M495 673c33-22 68-29 110-15" class="fine"/>
+    <path d="M472 588c-8 38 8 76 0 133" stroke="#B77B5E" stroke-width="2"/>
+    <path d="M462 575l10-39 10 39" fill="#B77B5E"/>
+    <text x="372" y="755" class="label">READ · QUESTION · CONNECT</text>
+  </g>
+
+  <g class="float">
+    <path d="M407 236h128v91H407z" fill="#405D66" class="frame"/>
+    <path d="M407 236l22-17h128l-22 17M535 327l22-17v-91l-22 17" class="frame"/>
+    <text x="428" y="267" class="white">arXiv</text>
+    <text x="428" y="291" class="micro" style="fill:#C4D8D2">OPEN ACCESS</text>
+    <path d="M471 236v-51M455 203l16-20 16 20" class="frame"/>
+    <circle cx="471" cy="179" r="5" fill="#B77B5E" class="pulse"/>
+  </g>
+
+  <g fill="#B77B5E"><rect x="72" y="165" width="7" height="7"/><rect x="88" y="149" width="4" height="4"/><rect x="353" y="331" width="6" height="6"/><rect x="584" y="363" width="5" height="5"/><rect x="861" y="415" width="7" height="7"/></g>
+  <g fill="#6D8D91"><circle cx="358" cy="204" r="4"/><circle cx="570" cy="167" r="3"/><circle cx="349" cy="472" r="4"/><circle cx="594" cy="554" r="3"/><circle cx="823" cy="701" r="4"/></g>
+</svg>
