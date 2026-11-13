@@ -282,12 +282,12 @@ html[lang="en"] h2, html[lang="en"] .hero-deck { letter-spacing: -.025em; }
 .js .art.is-visible .paper-fill { fill-opacity: 1; }
 .js .art.is-visible .action { opacity: 1; transform: translate(0, 0); }
 .js .project-card.is-visible:hover .action { transform: translateY(-3px); }
-.js .hero-art .paper-fill { transition: fill-opacity 800ms ease 400ms; }
-.js .hero-art .action { transition: opacity 550ms ease 450ms, transform 1100ms cubic-bezier(.2,.65,.25,1) 450ms; }
-.js .hero-art.is-visible .draw { animation-duration: 1500ms; animation-timing-function: cubic-bezier(.3,.1,.25,1); }
-.js .hero-art.is-visible .draw.delay-1 { animation-delay: 300ms; }
-.js .hero-art.is-visible .draw.delay-2 { animation-delay: 650ms; }
-.js .hero-art.is-visible .draw.delay-3 { animation-delay: 950ms; }
+.js .art .paper-fill { transition: fill-opacity 800ms ease 400ms; }
+.js .art .action { transition: opacity 550ms ease 450ms, transform 1100ms cubic-bezier(.2,.65,.25,1) 450ms; }
+.js .art.is-visible .draw { animation-duration: 1500ms; animation-timing-function: cubic-bezier(.3,.1,.25,1); }
+.js .art.is-visible .draw.delay-1 { animation-delay: 300ms; }
+.js .art.is-visible .draw.delay-2 { animation-delay: 650ms; }
+.js .art.is-visible .draw.delay-3 { animation-delay: 950ms; }
 .js .hero-art.is-visible .draw.turning-page { animation: draw-line 1500ms cubic-bezier(.3,.1,.25,1) 350ms forwards, settle-page 900ms ease 1800ms backwards; transform-origin: 274px 235px; }
 @keyframes draw-line { to { stroke-dashoffset: 0; } }
 @keyframes settle-page { from { transform: rotate(3deg); } to { transform: rotate(0); } }
